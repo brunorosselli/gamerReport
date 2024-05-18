@@ -5,7 +5,6 @@ WORKDIR /app
 ARG JAR_FILE
 
 COPY target/${JAR_FILE} /app/gReport.jar
-COPY wait-for-it.sh /wait-for-it.sh
 
 EXPOSE 8080
 
