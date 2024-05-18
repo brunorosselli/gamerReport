@@ -2,9 +2,9 @@ FROM openjdk:17-slim
 
 WORKDIR /app
 
-ARG JAR_FILE
+COPY build/libs/*.jar /app/gReport.jar
 
-COPY target/${JAR_FILE} /app/gReport.jar
+#RUN chmod +x /wait-for-it.sh
 
 EXPOSE 8080
 
