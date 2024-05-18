@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  gReport-mongodb:
+    image: mongo
+    environment:
+      MONGO_INITDB_DATABASE: "gReport"
+    ports:
+      - "27017:27017"
+
+  gReport-api:
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://gReport-mongodb:27017/gReport
+    ports:
+      - "8080:8080"
+
