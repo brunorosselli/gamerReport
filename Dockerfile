@@ -2,10 +2,11 @@ FROM openjdk:17-slim
 
 WORKDIR /app
 
-ARG JAR_FILE
+COPY build/libs/*.jar /app/fiapfood.jar
+COPY wait-for-it.sh /wait-for-it.sh
 
-COPY target/${JAR_FILE} /app/gReport.jar
+#RUN chmod +x /wait-for-it.sh
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "gReport.jar"]
+CMD ["java", "-jar", "fiapfood.jar"]
